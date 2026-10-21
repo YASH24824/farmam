@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  FARMAM ORGANIC — Brand Design System (Tailwind CSS v4)             */
+/*  Forest #073B20 · Leaf #2F7D32 · Gold #E9A51A · Cream #FFF7E6       */
+/*  Earth #79502E · White #FFFFFF                                      */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  /* Brand palette */
+  --color-forest: #073b20;
+  --color-forest-deep: #042413;
+  --color-forest-soft: #0a4a29;
+  --color-leaf: #2f7d32;
+  --color-leaf-dark: #256828;
+  --color-gold: #e9a51a;
+  --color-gold-dark: #b57f0e;
+  --color-gold-soft: #fdf3da;
+  --color-cream: #fff7e6;
+  --color-cream-dark: #f3e7cc;
+  --color-earth: #79502e;
+  --color-earth-soft: #f2e9dd;
+  --color-sage: #eaf1e6;
+  --color-ink: #212b23;
+
+  /* Motion */
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-script: var(--font-caveat), "Segoe Script", cursive;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: rgb(233 165 26 / 0.35);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Layout ---------------------------------------------------------- */
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Buttons ---------------------------------------------------------- */
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-cream;
+  }
+
+  .btn-primary {
+    @apply bg-forest text-cream hover:bg-leaf hover:shadow-lg hover:shadow-forest/20 active:scale-[0.98];
+  }
+
+  .btn-gold {
+    @apply bg-gold text-forest-deep hover:bg-gold-dark hover:text-cream hover:shadow-lg hover:shadow-gold/25 active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply border border-forest/30 bg-transparent text-forest hover:border-forest hover:bg-forest hover:text-cream active:scale-[0.98];
+  }
+
+  .btn-outline-light {
+    @apply border border-cream/40 bg-transparent text-cream hover:border-cream hover:bg-cream hover:text-forest active:scale-[0.98];
+  }
+
+  .btn-sm {
+    @apply px-5 py-2.5 text-xs;
+  }
+
+  /* Typography ------------------------------------------------------- */
+  .eyebrow {
+    @apply text-[11px] font-bold tracking-[0.28em] uppercase text-gold-dark;
+  }
+
+  .eyebrow-light {
+    @apply text-[11px] font-bold tracking-[0.28em] uppercase text-gold;
+  }
+
+  /* Cards & chips ---------------------------------------------------- */
+  .card-frame {
+    @apply rounded-2xl border border-forest/10 bg-white shadow-[0_1px_2px_rgba(7,59,32,0.05),0_16px_40px_-24px_rgba(7,59,32,0.18)];
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-forest/15 bg-white/80 px-3 py-1 text-xs font-medium text-ink/75;
+  }
+
+  /* Form fields ------------------------------------------------------ */
+  .field-label {
+    @apply mb-1.5 block text-sm font-semibold text-forest;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-forest/20 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink/40 transition-colors duration-200 focus:border-leaf focus:ring-2 focus:ring-leaf/25 focus:outline-none;
+  }
+
+  .input-field-error {
+    @apply border-red-700/60 focus:border-red-700 focus:ring-red-700/20;
+  }
+
+  .field-error {
+    @apply mt-1.5 text-xs font-medium text-red-700;
+  }
+
+  /* Warm scrollbar for long lists & modals --------------------------- */
+  .scrollbar-warm {
+    scrollbar-width: thin;
+    scrollbar-color: #d9b76a transparent;
+  }
+
+  .scrollbar-warm::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-warm::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-warm::-webkit-scrollbar-thumb {
+    background-color: #dcbe9f;
+    border-radius: 999px;
+  }
+
+  /* Subtle paper texture for cream sections -------------------------- */
+  .texture-paper {
+    background-image: radial-gradient(
+      rgba(121, 80, 46, 0.055) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* Skip link (accessibility) ----------------------------------------- */
+  .skip-link {
+    @apply absolute top-3 left-3 z-[100] -translate-y-20 rounded-full bg-forest px-5 py-2.5 text-sm font-semibold text-cream shadow-lg transition-transform duration-200 focus:translate-y-0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gentle entrance animations (used sparingly) */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes modal-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px) scale(0.985);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s var(--ease-brand) both;
+  }
+
+  .animate-rise-in {
+    animation: rise-in 0.7s var(--ease-brand) both;
+  }
+
+  .animate-modal-in {
+    animation: modal-in 0.35s var(--ease-brand) both;
+  }
+}
