@@ -35,7 +35,6 @@ export default function RecipeCard({ recipe, onOpen }) {
           <span className="chip">
             <Clock className="h-3.5 w-3.5 text-gold-dark" aria-hidden="true" />
             {recipe.time}
-            <span className="text-ink/45">(est.)</span>
           </span>
           <span className="chip">
             <Users className="h-3.5 w-3.5 text-gold-dark" aria-hidden="true" />

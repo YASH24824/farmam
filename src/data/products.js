@@ -12,13 +12,13 @@ export const products = [
     name: "Jeera",
     englishName: "Cumin Seeds",
     category: "Whole Spices",
-    image: "/images/jeera-product.jpg",
-    imageAlt: "FARMAM ORGANIC Jeera — Cumin Seeds 1 kg pack",
+    image: "/images/live/jeera.jpg",
+    imageAlt: "Whole cumin seeds (jeera) in a wooden spoon",
     tagline: "The everyday tempering spice of Indian kitchens.",
     description:
       "A versatile Indian kitchen essential, valued for its distinctive aroma and flavour.",
     longDescription:
-      "Jeera is one of the most-used whole spices in Indian cooking. A small pinch, sizzled in hot oil or gently roasted, releases a warm, earthy aroma that forms the base of countless everyday dishes — from dal tadka and jeera rice to sabzis, raita and buttermilk.",
+      "Jeera is one of the most-used whole spices in Indian cooking. A small pinch, sizzled in hot oil or gently roasted, releases a warm, earthy aroma that forms the base of countless everyday dishes, from dal tadka and jeera rice to sabzis, raita and buttermilk.",
     highlights: ["Distinctive warm aroma", "Whole, unground seeds", "Ideal for tempering and roasting"],
     kitchenNotes:
       "Bloom in hot ghee or oil for tadka, roast lightly and grind for fresh-flavoured masalas, or stir through rice for a classic jeera rice.",
@@ -30,8 +30,8 @@ export const products = [
     name: "Bajri Atta",
     englishName: "Pearl Millet Flour",
     category: "Flours & Millets",
-    image: "/images/bajri-atta-product.jpg",
-    imageAlt: "FARMAM ORGANIC Bajri Atta — Pearl Millet Flour 1 kg pack",
+    image: "/images/live/bajri-atta.jpg",
+    imageAlt: "Freshly milled millet flour in a sack and bowl",
     tagline: "A traditional millet flour, stone ground.",
     description:
       "A traditional millet flour for preparing rotis and other everyday Indian dishes.",
@@ -48,8 +48,8 @@ export const products = [
     name: "Whole Bajra",
     englishName: "Pearl Millet",
     category: "Flours & Millets",
-    image: "/images/bajra-whole-product.jpg",
-    imageAlt: "FARMAM ORGANIC Whole Bajra — Pearl Millet 1 kg pack",
+    image: "/images/live/bajra-whole.jpg",
+    imageAlt: "Whole millet grains in a traditional clay pot",
     tagline: "Unpolished pearl millet grains.",
     description:
       "Whole pearl millet grains for traditional khichdi, porridge and home milling.",
@@ -66,13 +66,13 @@ export const products = [
     name: "Mung",
     englishName: "Green Gram Whole",
     category: "Pulses & Dals",
-    image: "/images/mung-product.jpg",
-    imageAlt: "FARMAM ORGANIC Mung — Green Gram Whole 1 kg pack",
+    image: "/images/live/mung.jpg",
+    imageAlt: "A bowl of whole green mung beans",
     tagline: "Whole green gram for comforting dals.",
     description:
       "Whole green gram for everyday dals, sprouts and comforting one-pot meals.",
     longDescription:
-      "Sabut mung is a humble, everyday pulse in Indian kitchens. It cooks into a soothing dal, sprouts beautifully for salads and chaats, and forms the base of khichdi — the comfort food of countless Indian homes.",
+      "Sabut mung is a humble, everyday pulse in Indian kitchens. It cooks into a soothing dal, sprouts beautifully for salads and chaats, and forms the base of khichdi, the comfort food of countless Indian homes.",
     highlights: ["Whole, with skin on", "For dals, sprouts and khichdi", "Cooks soft and comforting"],
     kitchenNotes:
       "Soak for a few hours before boiling, pressure-cook with turmeric and salt for a simple dal, or sprout for a crunchy addition to bowls.",
@@ -84,13 +84,13 @@ export const products = [
     name: "Mung Dal",
     englishName: "Split Green Gram",
     category: "Pulses & Dals",
-    image: "/images/mung-dal-product.jpg",
-    imageAlt: "FARMAM ORGANIC Mung Dal — Split Green Gram 1 kg pack",
+    image: "/images/live/mung-dal.jpg",
+    imageAlt: "Split yellow mung dal close up",
     tagline: "Split green gram for light, everyday dals.",
     description:
       "Split green gram that cooks quickly into light, everyday dals and khichdi.",
     longDescription:
-      "Dhuli mung dal is a light, easily digested dal that sits at the heart of simple Indian home food — from plain dal with a ghee tadka to soft khichdi on a quiet evening. It cooks quickly and pairs well with rice and roti alike.",
+      "Dhuli mung dal is a light, easily digested dal that sits at the heart of simple Indian home food, from plain dal with a ghee tadka to soft khichdi on a quiet evening. It cooks quickly and pairs well with rice and roti alike.",
     highlights: ["Splits cook quickly", "For light dals and khichdi", "Everyday home staple"],
     kitchenNotes:
       "Rinse and simmer with turmeric, finish with a ghee-and-jeera tadka, and serve with steamed rice for the classic comfort plate.",
@@ -102,13 +102,13 @@ export const products = [
     name: "Mungafali",
     englishName: "Groundnuts",
     category: "Nuts & Oilseeds",
-    image: "/images/mungafali-product.jpg",
-    imageAlt: "FARMAM ORGANIC Mungafali — Groundnuts 1 kg pack",
+    image: "/images/live/mungafali.jpg",
+    imageAlt: "A heap of whole groundnuts (mungafali) on a wooden table",
     tagline: "Earthy groundnuts for snacking and cooking.",
     description:
       "Earthy groundnuts for roasting, chikkis, chutneys and everyday snacking.",
     longDescription:
-      "Mungafali is as everyday as it gets — roasted with a sprinkle of salt, pounded into chutney, folded into chikki, or added to sabzis and poha for bite and body. A genuinely versatile pantry staple across India.",
+      "Mungafali is as everyday as it gets: roasted with a sprinkle of salt, pounded into chutney, folded into chikki, or added to sabzis and poha for bite and body. A genuinely versatile pantry staple across India.",
     highlights: ["For roasting and chikki", "For chutneys and sabzis", "Everyday snacking staple"],
     kitchenNotes:
       "Roast lightly with skin on for snacking, grind with garlic and chilli for chutney, or melt into jaggery chikki for a winter treat.",

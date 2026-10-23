@@ -9,11 +9,11 @@ import { CornerSprig } from "@/components/Decorations";
 export const metadata = {
   title: "Recipes & Benefits",
   description:
-    "Simple ingredients, beautiful Indian food — jeera rice, jeera aloo, bajra roti and khichdi recipes, plus ingredient spotlights on cumin and pearl millet.",
+    "Simple ingredients, beautiful Indian food: jeera rice, jeera aloo, bajra roti and khichdi recipes, plus ingredient spotlights on cumin and pearl millet.",
   openGraph: {
-    title: "Recipes & Benefits — FARMAM ORGANIC",
+    title: "Recipes & Benefits | FARMAM ORGANIC",
     description:
-      "Simple ingredients, beautiful Indian food — everyday recipes and ingredient know-how.",
+      "Simple ingredients, beautiful Indian food. Everyday recipes and ingredient know-how.",
   },
 };
 
@@ -25,7 +25,7 @@ export default function RecipesPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/recipes/jeera-rice.jpg"
-            alt="Jeera rice garnished with fresh coriander in a serving bowl"
+            alt="Jeera rice with cumin seeds and fresh coriander"
             fill
             priority
             sizes="100vw"
@@ -41,7 +41,7 @@ export default function RecipesPage() {
               <em className="text-gold italic">Beautiful Indian Food.</em>
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-cream/80 md:text-lg">
-              Everyday recipes, cooking know-how and honest ingredient notes —
+              Everyday recipes, cooking tips and ingredient notes,
               for the food India actually cooks at home.
             </p>
           </div>
@@ -58,7 +58,7 @@ export default function RecipesPage() {
                 Recipes to Try <em className="text-gold-dark italic">Today</em>
               </>
             }
-            description="Four everyday classics starring our two favourite ingredients — jeera and bajra. Tap any card for the full recipe."
+            description="Four everyday classics starring our two favourite ingredients, jeera and bajra. Tap any card for the full recipe."
           />
           <div className="mt-14">
             <RecipesExplorer />
@@ -86,7 +86,7 @@ export default function RecipesPage() {
                 <div className="relative aspect-[16/10]">
                   <Image
                     src="/images/cumin-seeds.jpg"
-                    alt="Whole cumin seeds served in brass bowls"
+                    alt="Whole cumin seeds in wooden scoops"
                     fill
                     sizes="(max-width: 1024px) 90vw, 480px"
                     className="object-cover"
@@ -97,7 +97,7 @@ export default function RecipesPage() {
                 <div className="relative aspect-[16/10]">
                   <Image
                     src="/images/cumin-tempering.jpg"
-                    alt="Cumin seeds sizzling in hot oil for a classic tadka"
+                    alt="A bowl of yellow dal with lentils and spices on the side"
                     fill
                     sizes="240px"
                     className="object-cover"
@@ -114,14 +114,14 @@ export default function RecipesPage() {
               <p className="mt-5 text-base leading-relaxed text-ink/75">
                 Jeera (cumin) carries a warm, earthy aroma with a gentle
                 citrus-like edge. Whole seeds are usually bloomed in hot oil
-                or ghee — the moment they darken and crackle, a dish finds
+                or ghee. The moment they darken and crackle, a dish finds
                 its soul.
               </p>
               <ul className="mt-6 space-y-3.5">
                 {[
-                  { icon: Flame, text: "Flavour — warm, earthy, slightly nutty; deeper when toasted" },
-                  { icon: Leaf, text: "Aroma — released best when the seeds sizzle in hot fat (tadka)" },
-                  { icon: CookingPot, text: "Uses — dals, jeera rice, aloo sabzis, raita, buttermilk and masalas" },
+                  { icon: Flame, text: "Flavour: warm, earthy, slightly nutty; deeper when toasted" },
+                  { icon: Leaf, text: "Aroma: released best when the seeds sizzle in hot fat (tadka)" },
+                  { icon: CookingPot, text: "Uses: dals, jeera rice, aloo sabzis, raita, buttermilk and masalas" },
                 ].map((row) => (
                   <li key={row.text} className="flex items-start gap-3.5">
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-soft text-gold-dark">
@@ -149,7 +149,7 @@ export default function RecipesPage() {
                 <div className="relative aspect-[16/10]">
                   <Image
                     src="/images/millet-flour.jpg"
-                    alt="Pearl millet flour with grains and a traditional stone mill"
+                    alt="Millet grains and freshly milled flour on a green leaf"
                     fill
                     sizes="(max-width: 1024px) 90vw, 480px"
                     className="object-cover"
@@ -160,7 +160,7 @@ export default function RecipesPage() {
                 <div className="relative aspect-[16/10]">
                   <Image
                     src="/images/roti-making.jpg"
-                    alt="Rolling out fresh rotis the traditional way"
+                    alt="A roti rolled out with a wooden rolling pin"
                     fill
                     sizes="240px"
                     className="object-cover"
@@ -176,14 +176,14 @@ export default function RecipesPage() {
               </h3>
               <p className="mt-5 text-base leading-relaxed text-ink/75">
                 Bajri (pearl millet) is a hardy, traditional grain of India's
-                drylands — naturally gluten-free and ground into a flour that
+                drylands. It is naturally gluten-free and ground into a flour that
                 makes hearty, warming food, especially loved through winter.
               </p>
               <ul className="mt-6 space-y-3.5">
                 {[
-                  { icon: CookingPot, text: "Rotis & rotlas — kneaded with warm water and patted by hand" },
-                  { icon: Flame, text: "Khichdi & porridge — soft, comforting one-pot meals" },
-                  { icon: Leaf, text: "Naturally gluten-free — a traditional grain for modern plates" },
+                  { icon: CookingPot, text: "Rotis & rotlas: kneaded with warm water and patted by hand" },
+                  { icon: Flame, text: "Khichdi & porridge: soft, comforting one-pot meals" },
+                  { icon: Leaf, text: "Naturally gluten-free: a traditional grain for modern plates" },
                 ].map((row) => (
                   <li key={row.text} className="flex items-start gap-3.5">
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-sage text-leaf-dark">
@@ -232,7 +232,7 @@ export default function RecipesPage() {
         variant="forest"
         script="From Farm to Food"
         title="Bring These Traditions to Your Table."
-        description="Everything on this page begins with honest ingredients — ours are ready when you are."
+        description="Every recipe here starts with good ingredients. Ours are ready when you are."
         primaryLabel="Discover Our Products"
         primaryHref="/products"
       />

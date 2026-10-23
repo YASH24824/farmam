@@ -7,18 +7,18 @@ import { featuredProducts } from "@/data/products";
 export const metadata = {
   title: "About Us",
   description:
-    "Our roots are in the land we love. Learn about FARMAM ORGANIC — a food brand inspired by Indian agriculture, traditional ingredients, and the everyday act of good cooking.",
+    "Our roots are in the land we love. Learn about FARMAM ORGANIC, a food brand inspired by Indian agriculture, traditional ingredients, and the everyday act of good cooking.",
   openGraph: {
-    title: "About Us — FARMAM ORGANIC",
+    title: "About Us | FARMAM ORGANIC",
     description:
-      "Our roots are in the land we love — the story and values behind FARMAM ORGANIC.",
+      "Our roots are in the land we love. The story and values behind FARMAM ORGANIC.",
   },
 };
 
 const values = [
   {
     title: "Respect for Nature",
-    text: "Fields, seasons, rains and soil — we remember that everything begins with nature, and act accordingly.",
+    text: "Fields, seasons, rains and soil. Everything we sell begins with nature.",
   },
   {
     title: "Appreciation for Indian Farming",
@@ -26,42 +26,42 @@ const values = [
   },
   {
     title: "Attention to Ingredient Quality",
-    text: "Look, aroma, feel, cleanliness — the small checks that separate a good ingredient from an ordinary one.",
+    text: "Look, aroma, feel and cleanliness. Small checks make a big difference.",
   },
   {
     title: "Respect for Traditional Food Practices",
-    text: "Stone grinding, hand-patted rotis, slow tempering — the wisdom of Indian kitchens guides how we think about food.",
+    text: "Stone grinding, hand-patted rotis and slow tempering shape how we think about food.",
   },
 ];
 
 const farmToFoodSteps = [
   {
     image: "/images/farmer-hands-grain.jpg",
-    alt: "A farmer's hands holding freshly harvested grain",
+    alt: "A hand brushing over ripe golden grain in the field",
     step: "01",
     title: "Ingredient Selection",
-    text: "It starts in the field — choosing crops and ingredients that belong to Indian agriculture.",
+    text: "It starts in the field, with crops grown on Indian farms.",
   },
   {
     image: "/images/millet-flour.jpg",
-    alt: "Millet flour and grains with a traditional stone mill",
+    alt: "Millet grains and freshly milled flour on a green leaf",
     step: "02",
-    title: "Thoughtful Processing",
-    text: "Cleaning and milling the way tradition intends — gently, and without unnecessary interference.",
+    title: "Careful Processing",
+    text: "Cleaned and milled gently, the traditional way.",
   },
   {
-    image: "/images/jeera-product.jpg",
-    alt: "FARMAM ORGANIC Jeera packaging",
+    image: "/images/live/jeera.jpg",
+    alt: "Whole cumin seeds in a wooden spoon",
     step: "03",
     title: "Careful Packing",
-    text: "Sealing freshness into every pack, with quality checks we intend to stand behind.",
+    text: "Packed fresh and checked before it leaves us.",
   },
   {
     image: "/images/roti-making.jpg",
-    alt: "Fresh rotis being made in a home kitchen",
+    alt: "A roti rolled out with a wooden rolling pin",
     step: "04",
     title: "Your Kitchen",
-    text: "Where our journey ends and yours begins — tadkas, rotis, dals and everyday memories.",
+    text: "Tadkas, rotis, dals and everyday family meals.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/farm-landscape.jpg"
-            alt="Green Indian farmland stretching to the horizon under a wide sky"
+            alt="Green farm fields and a village below a hill in rural India"
             fill
             priority
             sizes="100vw"
@@ -109,16 +109,13 @@ export default function AboutPage() {
               <div className="relative aspect-[4/3]">
                 <Image
                   src="/images/farmers-harvest.jpg"
-                  alt="Farmers in a green field holding freshly harvested produce"
+                  alt="A farmer sowing in a lush green paddy field"
                   fill
                   sizes="(max-width: 1024px) 90vw, 480px"
                   className="object-cover"
                 />
               </div>
             </div>
-            <p className="absolute -bottom-8 left-4 rotate-[-2deg] font-script text-3xl text-gold-dark">
-              with gratitude to our farmers
-            </p>
           </div>
 
           {/* Copy */}
@@ -134,24 +131,21 @@ export default function AboutPage() {
               }
             />
             <p className="mt-6 text-base leading-relaxed text-ink/75">
-              FARMAM ORGANIC began with a simple fondness — for the taste of
-              food made from honest, traditional Indian ingredients. The
+              FARMAM ORGANIC began with a love for the taste of
+              food made from pure, traditional Indian ingredients. The
               jeera that perfumes a dal. The bajra that makes winter rotis
               worth waiting for. The mung that turns a quiet evening into a
               comforting one.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink/75">
               We are building a food brand around that fondness. Our focus is
-              on choosing quality ingredients thoughtfully, handling them
+              on choosing quality ingredients carefully, handling them
               with care, and bringing them to your kitchen in a form your
               family already knows how to love.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink/75">
-              We are young, we are learning, and we are in no hurry — because
+              We are a young brand and we take our time, because
               good food, like good farming, takes its time.
-            </p>
-            <p className="mt-8 font-script text-3xl text-gold-dark">
-              — Team FARMAM ORGANIC
             </p>
           </div>
         </div>
@@ -170,14 +164,14 @@ export default function AboutPage() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-ink/70 md:text-lg">
               To bring traditional Indian ingredients to modern kitchens with
-              quality-first thinking, thoughtful sourcing, and deep respect
+              quality-first thinking, careful sourcing and deep respect
               for the food culture we grew up in.
             </p>
           </div>
           <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-3">
             {[
               "Quality-first thinking",
-              "Thoughtful sourcing",
+              "Careful sourcing",
               "Traditional food culture",
             ].map((pillar) => (
               <div
@@ -237,7 +231,7 @@ export default function AboutPage() {
                 <em className="text-gold italic">Every Pack</em>
               </>
             }
-            description="This is the quality journey we intend for every ingredient — from selection in the field to the food on your plate."
+            description="Every ingredient follows the same path, from the field to the food on your plate."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {farmToFoodSteps.map((step) => (
@@ -274,7 +268,7 @@ export default function AboutPage() {
         variant="light"
         script="From Farm to Food"
         title="Discover What We Bring to Your Kitchen."
-        description={`Start with our ${featuredProducts[0].name} and ${featuredProducts[1].name} — two everyday essentials, packed with care.`}
+        description={`Start with our ${featuredProducts[0].name} and ${featuredProducts[1].name}, two everyday essentials packed with care.`}
         primaryLabel="Explore Our Products"
         primaryHref="/products"
       />

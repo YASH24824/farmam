@@ -1,6 +1,5 @@
 import { Fraunces, DM_Sans, Caveat } from "next/font/google";
 import "./globals.css";
-import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -29,11 +28,11 @@ const caveat = Caveat({
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "FARMAM ORGANIC — From Farm to Food",
-    template: "%s — FARMAM ORGANIC",
+    default: "FARMAM ORGANIC | From Farm to Food",
+    template: "%s | FARMAM ORGANIC",
   },
   description:
-    "Natural Indian food products inspired by traditional agriculture, quality ingredients, and authentic flavours. Discover FARMAM ORGANIC Jeera and Bajri Atta — from farm to food.",
+    "Natural Indian food products inspired by traditional agriculture, quality ingredients, and authentic flavours. Discover FARMAM ORGANIC Jeera and Bajri Atta, from farm to food.",
   keywords: [
     "FARMAM ORGANIC",
     "organic food India",
@@ -46,7 +45,7 @@ export const metadata = {
     "From Farm to Food",
   ],
   openGraph: {
-    title: "FARMAM ORGANIC — From Farm to Food",
+    title: "FARMAM ORGANIC | From Farm to Food",
     description:
       "Natural Indian food products inspired by traditional agriculture, quality ingredients, and authentic flavours.",
     url: siteUrl,
@@ -57,13 +56,13 @@ export const metadata = {
         url: "/images/hero-farmland.jpg",
         width: 1920,
         height: 1080,
-        alt: "Lush green Indian farmland at golden hour",
+        alt: "Aerial view of green farm fields in rural India",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FARMAM ORGANIC — From Farm to Food",
+    title: "FARMAM ORGANIC | From Farm to Food",
     description:
       "Natural Indian food products inspired by traditional agriculture, quality ingredients, and authentic flavours.",
   },
@@ -85,7 +84,6 @@ export default function RootLayout({ children }) {
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
-        <AnnouncementBar />
         <Navbar />
         <main id="main-content" className="flex-1">
           {children}

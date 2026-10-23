@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { Check, PackageCheck } from "lucide-react";
 import Modal from "@/components/Modal";
+import { productEnquiryLink } from "@/data/business";
 
 /**
  * Product detail dialog — opens from a product card.
@@ -17,14 +17,14 @@ export default function ProductDetailsDialog({ product, open, onClose }) {
     <Modal open={open} onClose={onClose} labelledBy={titleId} closeLabel={`Close ${product.name} details`}>
       <div className="grid md:grid-cols-2">
         {/* Image panel */}
-        <div className="texture-paper relative flex items-center justify-center bg-cream p-8 md:p-10">
-          <div className="relative aspect-[2/3] w-full max-w-[260px]">
+        <div className="relative min-h-[240px] bg-cream">
+          <div className="absolute inset-0">
             <Image
               src={product.image}
               alt={product.imageAlt}
               fill
-              sizes="(max-width: 768px) 70vw, 300px"
-              className="object-contain drop-shadow-[0_24px_32px_rgba(7,59,32,0.22)]"
+              sizes="(max-width: 768px) 100vw, 440px"
+              className="object-cover"
             />
           </div>
           <span className="chip absolute top-4 left-4">{product.category}</span>
@@ -66,13 +66,15 @@ export default function ProductDetailsDialog({ product, open, onClose }) {
             Packaging: {product.packaging}
           </div>
 
-          <Link
-            href={`/contact?product=${product.id}`}
+          <a
+            href={productEnquiryLink(product)}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={onClose}
             className="btn btn-primary mt-6 w-full"
           >
             Enquire Now
-          </Link>
+          </a>
         </div>
       </div>
     </Modal>

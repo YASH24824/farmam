@@ -37,8 +37,7 @@ export default function RecipeDetails({ recipe, open, onClose }) {
         <div className="mt-5 flex flex-wrap gap-2">
           <span className="chip">
             <Clock className="h-3.5 w-3.5 text-gold-dark" aria-hidden="true" />
-            Preparation: {recipe.time}{" "}
-            <span className="text-ink/45">(estimate)</span>
+            Preparation: {recipe.time}
           </span>
           <span className={`chip border ${difficultyTone[recipe.difficulty] ?? ""}`}>
             <Gauge className="h-3.5 w-3.5" aria-hidden="true" />
@@ -100,8 +99,7 @@ export default function RecipeDetails({ recipe, open, onClose }) {
         </div>
 
         <p className="mt-8 rounded-xl bg-sage p-4 text-xs leading-relaxed text-ink/60">
-          Preparation times are estimates and may vary with your kitchen,
-          equipment and preferences. Adjust seasonings to taste.
+          Tip: adjust salt and spice to your taste.
         </p>
       </div>
     </Modal>

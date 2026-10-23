@@ -3,15 +3,15 @@ import Link from "next/link";
 import { PackageCheck, ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import ProductCatalogue from "@/components/ProductCatalogue";
-import { WheatDivider, CornerSprig } from "@/components/Decorations";
+import { CornerSprig } from "@/components/Decorations";
 import { products } from "@/data/products";
 
 export const metadata = {
   title: "Our Products",
   description:
-    "Discover ingredients inspired by Indian farms and traditional kitchens — FARMAM ORGANIC Jeera, Bajri Atta, millets, pulses and more. Enquire for retail, distribution and bulk.",
+    "Discover ingredients inspired by Indian farms and traditional kitchens: FARMAM ORGANIC Jeera, Bajri Atta, millets, pulses and more. Enquire for retail, distribution and bulk.",
   openGraph: {
-    title: "Our Products — FARMAM ORGANIC",
+    title: "Our Products | FARMAM ORGANIC",
     description:
       "Discover ingredients inspired by Indian farms and traditional kitchens.",
   },
@@ -31,7 +31,7 @@ export default function ProductsPage() {
             </h1>
             <p className="mt-5 max-w-lg text-base leading-relaxed text-ink/70 md:text-lg">
               Discover ingredients inspired by Indian farms and traditional
-              kitchens — packed with care, and made for everyday cooking.
+              kitchens, packed with care and made for everyday cooking.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-2">
               <span className="chip">
@@ -96,7 +96,7 @@ export default function ProductsPage() {
               <div className="relative aspect-[4/3]">
                 <Image
                   src="/images/cumin-tempering.jpg"
-                  alt="Cumin tadka sizzling in hot oil — the classic Indian tempering"
+                  alt="A bowl of yellow dal with lentils and spices on the side"
                   fill
                   sizes="(max-width: 1024px) 90vw, 480px"
                   className="object-cover"
@@ -107,7 +107,7 @@ export default function ProductsPage() {
               <div className="relative aspect-square">
                 <Image
                   src="/images/millet-grains.jpg"
-                  alt="Pearl millet grains resting in a wooden spoon"
+                  alt="Millet grains in a traditional clay pot"
                   fill
                   sizes="220px"
                   className="object-cover"
@@ -132,12 +132,12 @@ export default function ProductsPage() {
             <p className="mt-6 text-base leading-relaxed text-ink/75">
               A pinch of jeera in smoking oil is the beginning of half the
               dishes India cooks at home. Pearl millet has fed families for
-              generations — in rotis that warm winter evenings, and khichdi
+              generations, in rotis that warm winter evenings and khichdi
               that comforts like a blanket.
             </p>
             <p className="mt-4 text-base leading-relaxed text-ink/75">
               Our range is built around these humble, essential ingredients.
-              No novelty, no shortcuts — just the spices, millets, pulses and
+              No shortcuts, just the spices, millets, pulses and
               grains that Indian kitchens actually reach for, every single
               day.
             </p>
@@ -145,8 +145,8 @@ export default function ProductsPage() {
               "The best Indian food has always been simple food, made well."
             </blockquote>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/recipes" className="btn btn-primary btn-sm">
-                Recipes & Benefits
+              <Link href="/promise" className="btn btn-primary btn-sm">
+                Our Promise
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link href="/about" className="btn btn-outline btn-sm">
@@ -155,19 +155,6 @@ export default function ProductsPage() {
             </div>
           </div>
         </div>
-
-        <WheatDivider className="mx-auto mt-20 max-w-md" />
-        <p className="mt-6 text-center text-sm leading-relaxed text-ink/55">
-          Looking to stock FARMAM ORGANIC in your store, or interested in
-          distribution?{" "}
-          <Link
-            href="/contact?type=Retail%20Partnership"
-            className="font-semibold text-forest underline decoration-gold decoration-2 underline-offset-4 hover:text-leaf"
-          >
-            Partner with us
-          </Link>
-          .
-        </p>
       </section>
     </>
   );

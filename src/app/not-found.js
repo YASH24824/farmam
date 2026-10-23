@@ -11,8 +11,8 @@ export default function NotFound() {
   return (
     <section className="texture-paper flex flex-col items-center justify-center bg-cream px-4 py-24 text-center md:py-32">
       <Image
-        src="/images/farmam-logo.png"
-        alt="FARMAM ORGANIC logo — From Farm to Food"
+        src="/images/farmam-logo-clean.png"
+        alt="FARMAM ORGANIC logo"
         width={140}
         height={122}
         className="h-28 w-auto"
@@ -27,7 +27,7 @@ export default function NotFound() {
         This Page Seems to Have Wandered Off to the Fields.
       </h1>
       <p className="mt-4 max-w-md text-base leading-relaxed text-ink/65">
-        The page you're looking for isn't here — but our ingredients are
+        The page you're looking for isn't here, but our ingredients are
         always where they belong, in the kitchen.
       </p>
       <div className="mt-9 flex flex-wrap items-center justify-center gap-4">

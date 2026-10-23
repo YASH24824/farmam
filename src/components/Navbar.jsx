@@ -4,8 +4,11 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { navLinks } from "@/data/navigation";
+import { business } from "@/data/business";
+
+const telHref = `tel:${business.phone.replace(/\s/g, "")}`;
 
 function isActive(pathname, href) {
   if (href === "/") return pathname === "/";
@@ -15,44 +18,40 @@ function isActive(pathname, href) {
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // Close the mobile menu with Escape
+  useEffect(() => {-0
+    if (!open) return;
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 bg-cream transition-all duration-300 ${
-        scrolled
-          ? "border-b border-forest/10 shadow-[0_12px_32px_-24px_rgba(7,59,32,0.45)]"
-          : "border-b border-transparent"
-      }`}
-    >
+    <header className="sticky top-0 z-50 border-b border-forest/10 bg-white">
       <nav
-        className="container-site flex h-[76px] items-center justify-between gap-4"
         aria-label="Main navigation"
+        className="container-site flex h-[76px] items-center justify-between gap-6 md:h-[92px]"
       >
+        {/* Logo */}
         <Link
           href="/"
-          className="relative shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-          aria-label="FARMAM ORGANIC — go to home page"
+          onClick={() => setOpen(false)}
+          aria-label="FARMAM ORGANIC home"
+          className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
         >
           <Image
-            src="/images/farmam-logo.png"
-            alt="FARMAM ORGANIC logo — From Farm to Food"
-            width={150}
-            height={131}
+            src="/images/farmam-logo-clean.png"
+            alt="FARMAM ORGANIC logo"
+            width={180}
+            height={147}
             priority
-            className="h-13 w-auto md:h-14"
+            className="h-[60px] w-auto md:h-[74px]"
           />
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-7 lg:flex xl:gap-9">
+        <ul className="hidden items-center gap-8 lg:flex xl:gap-10">
           {navLinks.map((link) => {
             const active = isActive(pathname, link.href);
             return (
@@ -60,17 +59,17 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   aria-current={active ? "page" : undefined}
-                  className={`relative py-2 text-sm transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                  className={`relative block py-2 text-[15px] whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                     active
                       ? "font-semibold text-forest"
-                      : "font-medium text-ink/65 hover:text-forest"
+                      : "font-medium text-ink/70 hover:text-forest"
                   }`}
                 >
                   {link.label}
                   <span
                     aria-hidden="true"
-                    className={`absolute -bottom-0.5 left-0 h-[2.5px] rounded-full bg-gold transition-all duration-300 ${
-                      active ? "w-full" : "w-0"
+                    className={`absolute inset-x-0 -bottom-0.5 h-0.5 rounded-full bg-gold transition-transform duration-300 ${
+                      active ? "scale-x-100" : "scale-x-0"
                     }`}
                   />
                 </Link>
@@ -79,63 +78,70 @@ export default function Navbar() {
           })}
         </ul>
 
-        <div className="hidden lg:block">
-          <Link href="/products" className="btn btn-primary btn-sm">
-            Explore Products
-          </Link>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-forest transition-colors hover:bg-forest/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold lg:hidden"
+        {/* Desktop call button */}
+        <a
+          href={telHref}
+          aria-label={`Call us on ${business.phone}`}
+          className="btn btn-primary hidden px-5 py-2.5 text-[15px] whitespace-nowrap lg:inline-flex"
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+          <Phone className="h-[18px] w-[18px]" aria-hidden="true" />
+          {business.phone}
+        </a>
+
+        {/* Mobile: call + menu */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <a
+            href={telHref}
+            aria-label={`Call us on ${business.phone}`}
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-forest text-cream shadow-md transition-colors hover:bg-forest-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          >
+            <Phone className="h-5 w-5" aria-hidden="true" />
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="flex h-11 w-11 items-center justify-center rounded-full text-forest hover:bg-forest/5"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
-      <div
-        id="mobile-menu"
-        className={`overflow-hidden border-t border-forest/10 bg-cream transition-[max-height] duration-300 ease-out lg:hidden ${
-          open ? "max-h-[480px]" : "max-h-0 border-t-0"
-        }`}
-      >
-        <ul className="container-site flex flex-col gap-1 py-4">
-          {navLinks.map((link) => {
-            const active = isActive(pathname, link.href);
-            return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  aria-current={active ? "page" : undefined}
-                  className={`block rounded-xl px-4 py-3 text-base transition-colors ${
-                    active
-                      ? "bg-forest text-cream"
-                      : "font-medium text-ink/75 hover:bg-forest/5 hover:text-forest"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            );
-          })}
-          <li className="mt-2 pb-1">
-            <Link
-              href="/products"
-              onClick={() => setOpen(false)}
-              className="btn btn-primary w-full"
-            >
-              Explore Products
-            </Link>
-          </li>
-        </ul>
-      </div>
+      {open && (
+        <div id="mobile-menu" className="border-t border-forest/10 bg-white lg:hidden">
+          <ul className="container-site py-2">
+            {navLinks.map((link) => {
+              const active = isActive(pathname, link.href);
+              return (
+                <li key={link.href} className="border-b border-forest/5 last:border-0">
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    aria-current={active ? "page" : undefined}
+                    className={`block py-3.5 text-base ${
+                      active
+                        ? "font-semibold text-forest"
+                        : "font-medium text-ink/75"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <div className="container-site pb-5">
+            <a href={telHref} className="btn btn-primary w-full">
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              Call {business.phone}
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

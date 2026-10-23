@@ -44,7 +44,7 @@ export default function ProductCatalogue() {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search products — e.g. jeera, millet, dal…"
+            placeholder="Search products, e.g. jeera, millet, dal"
             aria-label="Search products by name"
             className="input-field rounded-full py-3 pl-11"
           />
@@ -77,11 +77,6 @@ export default function ProductCatalogue() {
         </div>
       </div>
 
-      {/* Result count */}
-      <p className="mt-6 text-sm text-ink/55" aria-live="polite">
-        Showing {filtered.length} of {products.length}{" "}
-        {products.length === 1 ? "product" : "products"}
-      </p>
 
       {/* Grid */}
       {filtered.length > 0 ? (

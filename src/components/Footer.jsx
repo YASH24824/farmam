@@ -16,16 +16,16 @@ export default function Footer() {
 
   return (
     <footer className="mt-auto bg-forest-deep text-cream/75">
-      <div className="container-site grid gap-12 py-14 md:grid-cols-2 md:py-16 lg:grid-cols-12 lg:gap-8">
+      <div className="container-site grid grid-cols-2 gap-x-6 gap-y-10 py-12 md:gap-12 md:py-16 lg:grid-cols-12 lg:gap-8">
         {/* Brand */}
-        <div className="lg:col-span-4">
-          <div className="inline-flex rounded-2xl bg-cream p-3 pr-6 shadow-lg">
+        <div className="col-span-2 md:col-span-1 lg:col-span-4">
+          <div className="inline-flex items-center justify-center rounded-3xl bg-cream px-5 py-4 shadow-[0_18px_40px_-20px_rgba(0,0,0,0.6)] ring-1 ring-gold/40 ring-offset-4 ring-offset-forest-deep">
             <Image
-              src="/images/farmam-logo.png"
-              alt="FARMAM ORGANIC logo — From Farm to Food"
+              src="/images/farmam-logo-clean.png"
+              alt="FARMAM ORGANIC logo"
               width={150}
-              height={131}
-              className="h-16 w-auto"
+              height={123}
+              className="h-20 w-auto"
             />
           </div>
           <p className="mt-5 font-script text-3xl text-gold">
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         {/* Navigation */}
-        <nav className="lg:col-span-2" aria-label="Footer navigation">
+        <nav className="col-span-1 lg:col-span-2" aria-label="Footer navigation">
           <h3 className="text-xs font-bold tracking-[0.22em] text-gold uppercase">
             Explore
           </h3>
@@ -73,7 +73,7 @@ export default function Footer() {
         </nav>
 
         {/* Products */}
-        <div className="lg:col-span-3">
+        <div className="col-span-1 lg:col-span-3">
           <h3 className="text-xs font-bold tracking-[0.22em] text-gold uppercase">
             Our Range
           </h3>
@@ -84,7 +84,7 @@ export default function Footer() {
                   href="/products"
                   className="text-sm text-cream/65 transition-colors hover:text-gold"
                 >
-                  {product.name} — {product.englishName}
+                  {product.name} ({product.englishName})
                 </Link>
               </li>
             ))}
@@ -92,7 +92,7 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div className="lg:col-span-3">
+        <div className="col-span-2 lg:col-span-3">
           <h3 className="text-xs font-bold tracking-[0.22em] text-gold uppercase">
             Get in Touch
           </h3>
@@ -108,7 +108,9 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold/80" aria-hidden="true" />
-              <span>{business.phone}</span>
+              <a href={`tel:${business.phone.replace(/\s/g, "")}`} className="transition-colors hover:text-gold">
+                {business.phone}
+              </a>
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold/80" aria-hidden="true" />
@@ -125,7 +127,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-cream/10">
-        <div className="container-site flex flex-col items-center justify-between gap-2 py-5 text-xs text-cream/45 sm:flex-row">
+        <div className="container-site flex flex-col items-center justify-between gap-2 pt-5 pb-20 text-xs text-cream/45 sm:flex-row md:pb-5">
           <p>
             © {year} {business.name}. All rights reserved.
           </p>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Wheat } from "lucide-react";
 
 /**
  * Reusable closing CTA band.
@@ -15,26 +14,21 @@ export default function CTASection({
   secondaryLabel,
   secondaryHref,
   variant = "light",
+  fullScreen = false,
 }) {
   const dark = variant === "forest";
 
   return (
     <section
       className={`relative overflow-hidden ${
+        fullScreen
+          ? "flex min-h-[calc(100svh-76px)] items-center md:min-h-[calc(100svh-92px)]"
+          : ""
+      } ${
         dark ? "bg-forest" : "texture-paper bg-gold-soft"
       }`}
     >
-      {/* subtle botanical corners */}
-      <Wheat
-        className="absolute -top-4 -left-3 h-24 w-24 rotate-[24deg] text-gold/15"
-        aria-hidden="true"
-      />
-      <Wheat
-        className="absolute -right-3 -bottom-4 h-24 w-24 rotate-[204deg] text-gold/15"
-        aria-hidden="true"
-      />
-
-      <div className="container-site relative py-16 text-center md:py-24">
+      <div className="container-site relative w-full py-16 text-center md:py-24">
         {script ? (
           <p className={`font-script text-3xl md:text-4xl ${dark ? "text-gold" : "text-gold-dark"}`}>
             {script}
@@ -56,14 +50,14 @@ export default function CTASection({
             {description}
           </p>
         ) : null}
-        <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-          <Link href={primaryHref} className={dark ? "btn btn-gold" : "btn btn-primary"}>
+        <div className="mx-auto mt-9 flex max-w-xs flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-4">
+          <Link href={primaryHref} className={`justify-center ${dark ? "btn btn-gold" : "btn btn-primary"}`}>
             {primaryLabel}
           </Link>
           {secondaryLabel ? (
             <Link
               href={secondaryHref}
-              className={dark ? "btn btn-outline-light" : "btn btn-outline"}
+              className={`justify-center ${dark ? "btn btn-outline-light" : "btn btn-outline"}`}
             >
               {secondaryLabel}
             </Link>

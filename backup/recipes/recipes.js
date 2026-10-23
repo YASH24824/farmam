@@ -1,6 +1,5 @@
 /* ------------------------------------------------------------------ */
 /*  FARMAM ORGANIC — Recipes data                                      */
-/*  Preparation times are ESTIMATES and are labelled as such on site.  */
 /* ------------------------------------------------------------------ */
 
 export const recipes = [
@@ -8,9 +7,9 @@ export const recipes = [
     id: "jeera-rice",
     title: "Jeera Rice",
     image: "/images/recipes/jeera-rice.jpg",
-    imageAlt: "Jeera rice — cumin rice garnished with fresh coriander",
+    imageAlt: "Jeera rice: cumin rice with fresh coriander",
     intro:
-      "Fragrant basmati rice tossed with sizzled cumin and ghee — the simplest way to turn plain rice into something special.",
+      "Fragrant basmati rice tossed with sizzled cumin and ghee. The simplest way to turn plain rice into something special.",
     time: "25 minutes",
     difficulty: "Easy",
     serves: "3–4",
@@ -25,7 +24,7 @@ export const recipes = [
     ],
     steps: [
       "Drain the soaked rice and set aside.",
-      "Heat ghee in a heavy-bottomed pot over medium heat. Add the cumin seeds and bay leaf and let them sizzle for a few seconds until fragrant — take care not to burn them.",
+      "Heat ghee in a heavy-bottomed pot over medium heat. Add the cumin seeds and bay leaf and let them sizzle for a few seconds until fragrant. Take care not to burn them.",
       "Add the drained rice and gently stir for 1–2 minutes so each grain is coated in the ghee.",
       "Pour in the hot water, add salt, and bring to a boil.",
       "Reduce the heat to low, cover, and cook for 8–10 minutes until the water is absorbed and the rice is tender.",
@@ -36,9 +35,9 @@ export const recipes = [
     id: "jeera-aloo",
     title: "Jeera Aloo",
     image: "/images/recipes/jeera-aloo.jpg",
-    imageAlt: "Jeera aloo — cumin tempered potatoes with coriander",
+    imageAlt: "Spiced potato sabzi served with puris",
     intro:
-      "Comfort in a pan — boiled potatoes tumbled in a smoky cumin tempering with chilli and a squeeze of lemon.",
+      "Comfort in a pan: boiled potatoes tumbled in a smoky cumin tempering with chilli and a squeeze of lemon.",
     time: "20 minutes",
     difficulty: "Easy",
     serves: "2–3",
@@ -64,9 +63,9 @@ export const recipes = [
     id: "bajra-roti",
     title: "Bajra Roti",
     image: "/images/recipes/bajra-roti.jpg",
-    imageAlt: "Bajra roti — rustic millet flatbreads served with butter",
+    imageAlt: "A stack of soft rotis on a checked cloth",
     intro:
-      "The winter classic — rustic pearl millet flatbreads, traditionally patted by hand and served hot with ghee or white butter.",
+      "The winter classic: rustic pearl millet flatbreads, traditionally patted by hand and served hot with ghee or white butter.",
     time: "40 minutes",
     difficulty: "Medium",
     serves: "Makes 6–8 rotis",
@@ -82,16 +81,16 @@ export const recipes = [
       "Divide the dough into 6–8 portions and roll them into smooth balls.",
       "Traditionally, rotis are patted by hand: place a ball on a sheet of plastic or cloth, flatten it, and pat gently with your palm, turning as you go, into a disc about 15 cm wide. (A rolling pin also works — dust lightly with flour and roll gently.)",
       "Cook the roti on a hot tawa over medium-high heat. When small spots appear, flip it. Press gently with a cloth for even puffing and cook until light brown spots appear on both sides.",
-      "Smear generously with ghee or white butter and serve immediately — bajra rotis are best eaten fresh and hot, with kadhi, jaggery, or a simple sabzi.",
+      "Smear generously with ghee or white butter and serve immediately. Bajra rotis are best eaten fresh and hot, with kadhi, jaggery, or a simple sabzi.",
     ],
   },
   {
     id: "veggie-khichdi",
     title: "Bajra Vegetable Khichdi",
     image: "/images/recipes/veggie-khichdi.jpg",
-    imageAlt: "Bajra vegetable khichdi — a one-pot millet comfort meal",
+    imageAlt: "Khichdi, a warm, yellow one-pot comfort meal",
     intro:
-      "A one-pot comfort meal — coarse bajra simmered with mung dal and seasonal vegetables, finished with a ghee tadka.",
+      "A one-pot comfort meal of coarse bajra simmered with mung dal and seasonal vegetables, finished with a ghee tadka.",
     time: "35 minutes",
     difficulty: "Easy",
     serves: "3–4",
@@ -115,7 +114,7 @@ export const recipes = [
       "Add the tomato and cook until it softens. Stir in the turmeric and garam masala.",
       "Add the drained bajra, mung dal, vegetables, salt, and water. Stir well.",
       "Pressure cook for 4–5 whistles (or simmer covered in a pot for 25–30 minutes) until everything is soft and cooked through.",
-      "Rest for a few minutes, then stir — the khichdi should be soft and porridge-like. Loosen with a little hot water if needed.",
+      "Rest for a few minutes, then stir. The khichdi should be soft and porridge-like. Loosen with a little hot water if needed.",
       "Finish with a spoonful of ghee and serve warm with curd, pickle, or papad.",
     ],
   },
