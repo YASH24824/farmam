@@ -98,7 +98,7 @@ export default function ContactForm() {
               type="button"
               onClick={() => setTopic(t)}
               aria-pressed={topic === t}
-              className={`rounded-full border px-4 py-2 text-sm transition-colors ${
+              className={`min-h-11 rounded-full border px-4 py-2 text-sm transition-colors ${
                 topic === t
                   ? "border-forest bg-forest text-cream"
                   : "border-forest/15 bg-white text-ink/70 hover:border-forest/40"

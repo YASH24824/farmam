@@ -1,12 +1,16 @@
+import JsonLd, { breadcrumbSchema } from "@/components/seo/JsonLd";
 import { Suspense } from "react";
 import ContactForm from "@/components/ContactForm";
 import { business, whatsappLink } from "@/data/business";
 
 export const metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact Us",
   description:
     "Call, WhatsApp or email FARMAM ORGANIC for product questions, bulk orders, retail and distribution.",
   openGraph: {
+    url: "/contact",
+    images: ["/opengraph-image"],
     title: "Contact Us | FARMAM ORGANIC",
     description:
       "Call, WhatsApp or email FARMAM ORGANIC for product questions, bulk orders, retail and distribution.",
@@ -25,6 +29,8 @@ export default function ContactPage() {
   ].filter(Boolean);
 
   return (
+    <>
+    <JsonLd data={breadcrumbSchema("Contact Us", "/contact")} />
     <section className="bg-cream py-14 md:py-20">
       <div className="container-site grid gap-12 lg:grid-cols-12 lg:gap-16">
         {/* Left: how to reach us */}
@@ -46,7 +52,7 @@ export default function ContactPage() {
                   <a
                     href={w.href}
                     {...(w.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="text-base font-semibold text-forest underline-offset-4 hover:underline"
+                    className="-my-2.5 inline-block py-2.5 text-base font-semibold text-forest underline-offset-4 hover:underline"
                   >
                     {w.value}
                   </a>
@@ -84,5 +90,6 @@ export default function ContactPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

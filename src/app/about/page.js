@@ -1,3 +1,4 @@
+import JsonLd, { breadcrumbSchema } from "@/components/seo/JsonLd";
 import Image from "next/image";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
@@ -5,10 +6,13 @@ import { LeafBranch } from "@/components/Decorations";
 import { featuredProducts } from "@/data/products";
 
 export const metadata = {
+  alternates: { canonical: "/about" },
   title: "About Us",
   description:
     "Our roots are in the land we love. Learn about FARMAM ORGANIC, a food brand inspired by Indian agriculture, traditional ingredients, and the everyday act of good cooking.",
   openGraph: {
+    url: "/about",
+    images: ["/opengraph-image"],
     title: "About Us | FARMAM ORGANIC",
     description:
       "Our roots are in the land we love. The story and values behind FARMAM ORGANIC.",
@@ -68,6 +72,7 @@ const farmToFoodSteps = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema("About Us", "/about")} />
       {/* ------------------------------------------------ HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">

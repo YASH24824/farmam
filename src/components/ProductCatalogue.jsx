@@ -64,7 +64,7 @@ export default function ProductCatalogue() {
                 type="button"
                 onClick={() => setCategory(c)}
                 aria-pressed={active}
-                className={`rounded-full border px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                className={`min-h-11 rounded-full border px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                   active
                     ? "border-forest bg-forest text-cream shadow-md shadow-forest/20"
                     : "border-forest/20 bg-white text-ink/65 hover:border-forest/50 hover:text-forest"

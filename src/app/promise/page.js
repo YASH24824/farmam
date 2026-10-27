@@ -1,13 +1,17 @@
+import JsonLd, { breadcrumbSchema } from "@/components/seo/JsonLd";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
 
 export const metadata = {
+  alternates: { canonical: "/promise" },
   title: "Our Promise",
   description:
     "The promise behind every FARMAM ORGANIC product: nature first, quality you can trust, honest information and care in every detail.",
   openGraph: {
+    url: "/promise",
+    images: ["/opengraph-image"],
     title: "Our Promise | FARMAM ORGANIC",
     description:
       "Nature first, quality you can trust, honest information and care in every detail.",
@@ -44,6 +48,7 @@ const promises = [
 export default function PromisePage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema("Our Promise", "/promise")} />
       {/* ------------------------------------------------ HERO */}
       {/* Full-screen photo, centred heading, four promise cards along the bottom */}
       <section className="relative isolate flex min-h-[calc(100svh-76px)] flex-col overflow-hidden bg-forest-deep md:min-h-[calc(100svh-92px)]">

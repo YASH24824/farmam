@@ -1,3 +1,4 @@
+import JsonLd, { breadcrumbSchema, productListSchema } from "@/components/seo/JsonLd";
 import Image from "next/image";
 import Link from "next/link";
 import { PackageCheck, ArrowRight } from "lucide-react";
@@ -7,10 +8,13 @@ import { CornerSprig } from "@/components/Decorations";
 import { products } from "@/data/products";
 
 export const metadata = {
+  alternates: { canonical: "/products" },
   title: "Our Products",
   description:
-    "Discover ingredients inspired by Indian farms and traditional kitchens: FARMAM ORGANIC Jeera, Bajri Atta, millets, pulses and more. Enquire for retail, distribution and bulk.",
+    "Discover ingredients inspired by Indian farms and traditional kitchens: FARMAM ORGANIC Jeera, Bajri Atta, millets and pulses. Enquire for retail and bulk.",
   openGraph: {
+    url: "/products",
+    images: ["/opengraph-image"],
     title: "Our Products | FARMAM ORGANIC",
     description:
       "Discover ingredients inspired by Indian farms and traditional kitchens.",
@@ -20,6 +24,7 @@ export const metadata = {
 export default function ProductsPage() {
   return (
     <>
+      <JsonLd data={[breadcrumbSchema("Our Products", "/products"), productListSchema]} />
       {/* ------------------------------------------------ HERO */}
       <section className="texture-paper relative overflow-hidden bg-cream">
         <CornerSprig className="pointer-events-none absolute -top-2 -right-2 h-28 w-28 text-earth/25" />

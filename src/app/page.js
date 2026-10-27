@@ -14,6 +14,9 @@ import {
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import CTASection from "@/components/CTASection";
+import Reveal, { RevealGroup, RevealItem } from "@/components/motion/Reveal";
+import Parallax from "@/components/motion/Parallax";
+import HeroHeadline from "@/components/motion/HeroHeadline";
 import { featuredProducts } from "@/data/products";
 import { productEnquiryLink } from "@/data/business";
 
@@ -100,18 +103,21 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="-z-20 object-cover"
+          className="animate-ken-burns -z-20 object-cover"
         />
         {/* Readability overlays: bottom-heavy on mobile, left-heavy on desktop */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-forest-deep via-forest-deep/75 to-forest-deep/20 lg:bg-gradient-to-r lg:from-forest-deep/95 lg:via-forest-deep/70 lg:to-transparent" />
 
         <div className="container-site flex flex-1 flex-col justify-end pt-24 pb-10 sm:pb-14 lg:justify-center lg:py-16">
-          <div className="animate-rise-in max-w-xl">
-            <p className="eyebrow-light">Rooted in Nature. Made for Your Home.</p>
-            <h1 className="mt-4 font-serif text-[2.4rem] leading-[1.06] text-cream text-balance sm:text-5xl lg:text-6xl">
-              From Farm to Food, With{" "}
-              <em className="text-gold italic">Nature</em> in Every Grain.
-            </h1>
+          <div className="max-w-2xl">
+            <p className="eyebrow-light animate-fade-in text-balance">Rooted in Nature. Made for Your Home.</p>
+            <HeroHeadline
+              lines={[
+                ["From Farm to Food, With"],
+                ["Nature", true],
+                ["in Every Grain."],
+              ]}
+            >
             <p className="mt-5 max-w-md text-base leading-relaxed text-cream/80 md:text-lg">
               Traditional Indian ingredients, brought straight from the
               farm to your kitchen.
@@ -125,9 +131,10 @@ export default function HomePage() {
                 Our Story
               </Link>
             </div>
+            </HeroHeadline>
           </div>
 
-          <ul className="mt-10 grid grid-cols-1 gap-2.5 border-t border-cream/15 pt-6 text-sm text-cream/80 sm:grid-cols-3 sm:gap-6 lg:mt-16 lg:max-w-3xl">
+          <ul className="animate-fade-in mt-10 grid grid-cols-1 gap-2.5 border-t border-cream/15 pt-6 text-sm text-cream/80 sm:grid-cols-3 sm:gap-6 lg:mt-16 lg:max-w-3xl">
             {[
               "Rooted in Indian farms",
               "Traditional ingredients",
@@ -174,7 +181,8 @@ export default function HomePage() {
             {featuredProducts.map((product, i) => {
               const flipped = i % 2 === 1;
               return (
-                <article
+                <Reveal
+                  as="article"
                   key={product.id}
                   className="grid items-center gap-10 md:grid-cols-2 md:gap-14"
                 >
@@ -198,7 +206,7 @@ export default function HomePage() {
                             alt={product.imageAlt}
                             fill
                             sizes="(max-width: 768px) 90vw, 450px"
-                            className="object-cover"
+                            className="object-cover transition-transform duration-[1.2s] ease-[var(--ease-brand)] hover:scale-[1.06]"
                           />
                         </div>
                       </div>
@@ -256,7 +264,7 @@ export default function HomePage() {
                       Packaging: {product.packaging}
                     </p>
                   </div>
-                </article>
+                </Reveal>
               );
             })}
           </div>
@@ -274,15 +282,20 @@ export default function HomePage() {
           {/* Photos */}
           <div className="relative">
             <div className="relative aspect-[2/1] overflow-hidden rounded-3xl shadow-xl sm:aspect-[16/10] lg:aspect-[4/5] lg:max-h-[70svh] lg:w-[85%]">
-              <Image
-                src="/images/roti-making.jpg"
-                alt="A roti rolled out with a wooden rolling pin"
-                fill
-                sizes="(max-width: 1024px) 100vw, 520px"
-                className="object-cover"
-              />
+              <Parallax distance={40} className="absolute -inset-y-12 inset-x-0">
+                <div className="relative h-full w-full">
+                  <Image
+                    src="/images/roti-making.jpg"
+                    alt="A roti rolled out with a wooden rolling pin"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 520px"
+                    className="object-cover"
+                  />
+                </div>
+              </Parallax>
             </div>
-            <div className="absolute right-0 bottom-0 hidden w-[42%] translate-y-6 overflow-hidden rounded-3xl border-[6px] border-cream shadow-2xl lg:block">
+            <Parallax distance={70} className="absolute right-0 bottom-0 hidden w-[42%] lg:block">
+            <div className="translate-y-6 overflow-hidden rounded-3xl border-[6px] border-cream shadow-2xl lg:block">
               <div className="relative aspect-square">
                 <Image
                   src="/images/spice-bowls.jpg"
@@ -293,10 +306,11 @@ export default function HomePage() {
                 />
               </div>
             </div>
+            </Parallax>
           </div>
 
           {/* Copy */}
-          <div>
+          <Reveal>
             <p className="eyebrow">Our Philosophy</p>
             <h2 className="mt-3 font-serif text-[2rem] leading-[1.1] text-forest text-balance sm:text-4xl lg:text-5xl">
               Closer to Nature.{" "}
@@ -338,7 +352,7 @@ export default function HomePage() {
                 </li>
               ))}
             </ol>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -359,9 +373,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          <ol className="scrollbar-warm -mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-3 lg:mx-0 lg:mt-12 lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0">
+          <RevealGroup as="ol" className="scrollbar-warm -mx-4 mt-8 flex snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 pb-3 lg:mx-0 lg:mt-12 lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0">
             {journeySteps.map((step, i) => (
-              <li
+              <RevealItem
+                as="li"
                 key={step.title}
                 className="group w-[78%] shrink-0 snap-start overflow-hidden rounded-3xl bg-forest-soft ring-1 ring-cream/10 sm:w-[46%] lg:w-auto"
               >
@@ -389,9 +404,9 @@ export default function HomePage() {
                     {step.text}
                   </p>
                 </div>
-              </li>
+              </RevealItem>
             ))}
-          </ol>
+          </RevealGroup>
         </div>
       </section>
 
@@ -399,7 +414,7 @@ export default function HomePage() {
       {/* Heading left + even 2x2 card grid; fits one screen */}
       <section className="flex items-center bg-white py-12 lg:min-h-[calc(100svh-92px)] lg:py-16">
         <div className="container-site grid w-full items-center gap-8 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-5">
+          <Reveal className="lg:col-span-5">
             <p className="eyebrow">Why FARMAM ORGANIC</p>
             <h2 className="mt-3 font-serif text-[2rem] leading-[1.1] text-forest text-balance sm:text-4xl lg:text-5xl">
               Why Homes <em className="text-gold-dark italic">Choose Us</em>
@@ -417,31 +432,30 @@ export default function HomePage() {
                 Contact Us
               </Link>
             </div>
-          </div>
+            <p className="mt-8 -rotate-2 font-script text-2xl text-earth">
+              Packed the way we would for our own kitchen.
+            </p>
+          </Reveal>
 
-          <ul className="grid grid-cols-2 gap-3 sm:gap-5 lg:col-span-7">
-            {reasons.map((reason, i) => (
-              <li
+          <RevealGroup as="dl" className="divide-y divide-forest/12 border-y border-forest/12 lg:col-span-7">
+            {reasons.map((reason) => (
+              <RevealItem
                 key={reason.title}
-                className="group flex flex-col rounded-3xl border border-forest/10 bg-cream/60 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:bg-white hover:shadow-[0_24px_48px_-28px_rgba(7,59,32,0.35)] sm:p-7"
+                className="group grid grid-cols-[auto_1fr] items-baseline gap-x-5 py-6 sm:grid-cols-[2.5rem_14rem_1fr] sm:gap-x-8 sm:py-8"
               >
-                <div className="flex items-center justify-between">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-forest text-gold transition-colors duration-300 group-hover:bg-gold group-hover:text-forest-deep sm:h-13 sm:w-13">
-                    <reason.icon className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
-                  </span>
-                  <span className="font-serif text-2xl text-forest/15 sm:text-3xl">
-                    0{i + 1}
-                  </span>
-                </div>
-                <h3 className="mt-4 font-serif text-base leading-snug text-forest sm:mt-6 sm:text-xl">
+                <reason.icon
+                  className="h-5 w-5 translate-y-0.5 text-gold-dark transition-transform duration-500 group-hover:-rotate-12"
+                  aria-hidden="true"
+                />
+                <dt className="font-serif text-xl leading-snug text-forest sm:text-2xl">
                   {reason.title}
-                </h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-ink/60 sm:mt-2 sm:text-sm">
+                </dt>
+                <dd className="col-start-2 mt-1.5 text-sm leading-relaxed text-ink/65 sm:col-start-3 sm:mt-0 sm:text-base">
                   {reason.text}
-                </p>
-              </li>
+                </dd>
+              </RevealItem>
             ))}
-          </ul>
+          </RevealGroup>
         </div>
       </section>
 

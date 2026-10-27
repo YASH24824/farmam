@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import JsonLd, { organizationSchema, websiteSchema } from "@/components/seo/JsonLd";
 import { siteUrl } from "@/data/navigation";
 
 const fraunces = Fraunces({
@@ -51,15 +52,15 @@ export const metadata = {
     url: siteUrl,
     siteName: "FARMAM ORGANIC",
     type: "website",
-    images: [
-      {
-        url: "/images/hero-farmland.jpg",
-        width: 1920,
-        height: 1080,
-        alt: "Aerial view of green farm fields in rural India",
-      },
-    ],
+    locale: "en_IN",
   },
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  category: "food",
   twitter: {
     card: "summary_large_image",
     title: "FARMAM ORGANIC | From Farm to Food",
@@ -77,10 +78,16 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${fraunces.variable} ${dmSans.variable} ${caveat.variable}`}
     >
+      <head>
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
       <body className="flex min-h-screen flex-col">
+        <JsonLd data={[organizationSchema, websiteSchema]} />
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>

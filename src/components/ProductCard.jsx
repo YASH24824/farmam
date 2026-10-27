@@ -34,7 +34,7 @@ export default function ProductCard({ product }) {
         <div className="flex flex-1 flex-col p-5 md:p-6">
           <div>
             <h3 className="font-serif text-2xl text-forest">{product.name}</h3>
-            <p className="mt-1 text-[11px] font-bold tracking-[0.16em] text-earth uppercase">
+            <p className="mt-1 text-xs font-bold tracking-[0.14em] text-earth uppercase">
               {product.englishName}
             </p>
           </div>

@@ -1,3 +1,5 @@
+import Reveal from "@/components/motion/Reveal";
+
 /**
  * Section heading with eyebrow, serif title and optional description.
  * `tone="dark"` is for deep green sections.
@@ -14,7 +16,7 @@ export default function SectionHeading({
   const dark = tone === "dark";
 
   return (
-    <div
+    <Reveal
       className={`${isCenter ? "mx-auto max-w-2xl text-center" : "max-w-2xl"} ${className}`}
     >
       {eyebrow ? (
@@ -36,6 +38,6 @@ export default function SectionHeading({
           {description}
         </p>
       ) : null}
-    </div>
+    </Reveal>
   );
 }

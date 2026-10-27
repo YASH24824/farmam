@@ -59,6 +59,11 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+    /* Scroll-reveal content must never stay hidden */
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
   }
 }
 
@@ -90,16 +95,16 @@
   }
 
   .btn-sm {
-    @apply px-5 py-2.5 text-xs;
+    @apply min-h-11 px-5 py-2.5 text-xs;
   }
 
   /* Typography ------------------------------------------------------- */
   .eyebrow {
-    @apply text-[11px] font-bold tracking-[0.28em] uppercase text-gold-dark;
+    @apply text-xs font-bold tracking-[0.24em] uppercase text-gold-dark;
   }
 
   .eyebrow-light {
-    @apply text-[11px] font-bold tracking-[0.28em] uppercase text-gold;
+    @apply text-xs font-bold tracking-[0.24em] uppercase text-gold;
   }
 
   /* Cards & chips ---------------------------------------------------- */
@@ -117,7 +122,7 @@
   }
 
   .input-field {
-    @apply w-full rounded-xl border border-forest/20 bg-white px-4 py-3 text-sm text-ink placeholder:text-ink/40 transition-colors duration-200 focus:border-leaf focus:ring-2 focus:ring-leaf/25 focus:outline-none;
+    @apply w-full rounded-xl border border-forest/20 bg-white px-4 py-3 text-base sm:text-sm text-ink placeholder:text-ink/40 transition-colors duration-200 focus:border-leaf focus:ring-2 focus:ring-leaf/25 focus:outline-none;
   }
 
   .input-field-error {
@@ -207,8 +212,16 @@
     }
   }
 
+  @keyframes ken-burns {
+    from { transform: scale(1.12); }
+    to { transform: scale(1); }
+  }
+  .animate-ken-burns {
+    animation: ken-burns 2.8s var(--ease-brand) both;
+  }
+
   .animate-fade-in {
-    animation: fade-in 0.5s var(--ease-brand) both;
+    animation: fade-in 1s var(--ease-brand) 0.2s both;
   }
 
   .animate-rise-in {

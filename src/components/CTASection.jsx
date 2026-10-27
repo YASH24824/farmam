@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "@/components/motion/Reveal";
 
 /**
  * Reusable closing CTA band.
@@ -28,7 +29,7 @@ export default function CTASection({
         dark ? "bg-forest" : "texture-paper bg-gold-soft"
       }`}
     >
-      <div className="container-site relative w-full py-16 text-center md:py-24">
+      <Reveal className="container-site relative w-full py-16 text-center md:py-24">
         {script ? (
           <p className={`font-script text-3xl md:text-4xl ${dark ? "text-gold" : "text-gold-dark"}`}>
             {script}
@@ -63,7 +64,7 @@ export default function CTASection({
             </Link>
           ) : null}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

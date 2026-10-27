@@ -58,12 +58,12 @@ export default function Footer() {
           <h3 className="text-xs font-bold tracking-[0.22em] text-gold uppercase">
             Explore
           </h3>
-          <ul className="mt-5 space-y-3">
+          <ul className="mt-3 lg:mt-5 lg:space-y-3">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-cream/65 transition-colors hover:text-gold"
+                  className="inline-block py-2.5 text-sm text-cream/65 transition-colors hover:text-gold lg:py-0"
                 >
                   {link.label}
                 </Link>
@@ -77,12 +77,12 @@ export default function Footer() {
           <h3 className="text-xs font-bold tracking-[0.22em] text-gold uppercase">
             Our Range
           </h3>
-          <ul className="mt-5 space-y-3">
+          <ul className="mt-3 lg:mt-5 lg:space-y-3">
             {products.map((product) => (
               <li key={product.id}>
                 <Link
                   href="/products"
-                  className="text-sm text-cream/65 transition-colors hover:text-gold"
+                  className="inline-block py-2.5 text-sm text-cream/65 transition-colors hover:text-gold lg:py-0"
                 >
                   {product.name} ({product.englishName})
                 </Link>
@@ -101,14 +101,14 @@ export default function Footer() {
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold/80" aria-hidden="true" />
               <a
                 href={`mailto:${business.email}`}
-                className="break-all transition-colors hover:text-gold"
+                className="-my-3 inline-block break-all py-3 transition-colors hover:text-gold"
               >
                 {business.email}
               </a>
             </li>
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold/80" aria-hidden="true" />
-              <a href={`tel:${business.phone.replace(/\s/g, "")}`} className="transition-colors hover:text-gold">
+              <a href={`tel:${business.phone.replace(/\s/g, "")}`} className="-my-3 inline-block py-3 transition-colors hover:text-gold">
                 {business.phone}
               </a>
             </li>
