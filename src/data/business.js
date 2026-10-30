@@ -9,11 +9,11 @@ export const business = {
 
   email: "info@farmamorganic.in",
 
-  phone: "+91 94084 68858",
+  phone: "+91 81601 58274",
 
   // WhatsApp number in international format, digits only (e.g. "919876543210").
   // Leave empty ("") to hide all WhatsApp buttons until a real number exists.
-  whatsapp: "919408468858",
+  whatsapp: "918160158274",
 
   addressLines: ["FARMAM ORGANIC", "India"],
 
